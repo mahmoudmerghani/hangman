@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.game {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #667eea;
+    font-size: 2.5em;
+}
+
+#message {
+    font-size: 2.5rem;
+}
+
+#message.win {
+    color: green;
+}
+
+#message.lose {
+    color: red;
+}
+
+#wrong-count {
+    color: red;
+}
+
+.word {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.word > * {
+    width: 3em;
+    height: 3em;
+    border-bottom: 3px solid #667eea;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px 8px 0 0;
+}
+
+.characters {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.8rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.characters > * {
+    padding: 0.8rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.characters > *:hover {
+    background: #5a67d8;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.characters button.correct {
+    background: #27ae60;
+}
+
+.characters button.incorrect {
+    background: #e74c3c;
+}
+
+
