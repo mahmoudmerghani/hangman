@@ -15,12 +15,13 @@ const wordEl = document.querySelector(".word");
 const charactersEl = document.querySelector(".characters");
 const messageEl = document.getElementById("message");
 const wrongAnswersCountEl = document.getElementById("wrong-count");
+const playAgainBtn = document.getElementById("play-again");
 
 const MAX_WRONG_ANSWERS_COUNT = 6;
 
 let currentWord;
-let wrongAnswers = 0;
-let gameFinished = false;
+let wrongAnswers;
+let gameFinished;
 
 
 function getRandomWord(words) {
@@ -67,7 +68,16 @@ function checkWinning() {
 }
 
 function setUpGame() {
+    gameFinished = false;
+    wrongAnswers = 0;
     currentWord = getRandomWord(words);
+
+    updateWrongAnswersCount(wrongAnswers);
+    messageEl.textContent = "";
+    messageEl.className = "";
+
+    wordEl.innerHTML = "";
+    charactersEl.innerHTML = "";
 
     for (let i = 0; i < currentWord.length; i++) {
         const char = document.createElement("div");
@@ -117,6 +127,8 @@ charactersEl.addEventListener("click", (e) => {
         checkWinning();
     }
 });
+
+playAgainBtn.addEventListener("click", setUpGame);
 
 
 

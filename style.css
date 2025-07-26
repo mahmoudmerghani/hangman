@@ -79,6 +79,7 @@ h1 {
     gap: 0.8rem;
     max-width: 480px;
     margin: 0 auto;
+    margin-bottom: 3rem;
 }
 
 .characters > * {
@@ -110,4 +111,17 @@ button:disabled {
     background: #e74c3c;
 }
 
+#play-again {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}
 
+#play-again:hover {
+    background-color: #19753f;
+}
