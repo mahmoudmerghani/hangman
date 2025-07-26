@@ -44,6 +44,14 @@ function updateWrongAnswersCount(count) {
     wrongAnswersCountEl.textContent = count 
 }
 
+function showWord(word) {
+    const charSlots = wordEl.querySelectorAll(":scope > *");
+
+    for (let i = 0; i < word.length; i++) {
+        charSlots[i].textContent = word[i];
+    }
+}
+
 function checkWinning() {
     const charSlots = wordEl.querySelectorAll(":scope > *");
 
@@ -53,6 +61,7 @@ function checkWinning() {
         gameFinished = true;
         messageEl.textContent = "YOU WON!";
         messageEl.className = "win";
+        showWord(currentWord);
     }
 
 }
@@ -102,6 +111,7 @@ charactersEl.addEventListener("click", (e) => {
         gameFinished = true;
         messageEl.textContent = "you lost :(";
         messageEl.className = "lose";
+        showWord(currentWord);
     }
     else {
         checkWinning();
